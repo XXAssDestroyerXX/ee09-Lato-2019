@@ -17,17 +17,17 @@
 <h3><strong>Ryby drapieżne naszych wód</strong></h3>
 <ul>
     <?php 
-    
-    
-    
+    $db = new mysqli('localhost','root','','wedkowanie');
+    $sql = "SELECT nazwa, wystepowanie FROM `ryby` where styl_zycia = 1";
+    $wynik = $db->query($sql);
+    while($wiersz = $wynik->fetch_assoc()) {
+        $nazwa = $wiersz['nazwa'];
+        $wystepowanie = $wiersz['wystepowanie'];
+        echo "<li>$nazwa, wystepowanie: $wystepowanie</li>";
+    }
+    $db->close();
     
     ?>
-   
-        <span style="font-family: Verdana"><li>Szczupak, występowanie: stawy, rzeki</li></span>
-        <span style="font-family: Verdana"><li>Skandacz, występowanie: stawy, jeziora, rzeki</li></span>
-            <span style="font-family: Verdana"><li>Okon, występowanie: rzeki</li></span>
-                <span style="font-family: Verdana"><li>Sum, występowanie: jeziora, rzeki</li></span>
-                    <span style="font-family: Verdana"><li>Dorsz, występowanie: morza, oceany</li></span>
 </ul>
 </div>
 <div id="prawa">

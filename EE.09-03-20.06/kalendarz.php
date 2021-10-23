@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="style5.css">
 </head>
 
-
-
 <body>
     <div id="A1">
         <img src="kalendarz.png" alt="Moj kalendarz">
@@ -22,15 +20,13 @@
             $result = $db->query($query);
 
             while ($row = $result->fetch_assoc()){ //rzedy 
-                $miesiac = $row['miesiac'];
-                $rok = $row['rok'];
-                echo "<h3>miesiąc: $miesiac, rok: $rok</h3>";
+            $miesiac = $row['miesiac'];
+            $rok = $row['rok'];
+            echo "<h3>miesiąc: $miesiac, rok: $rok</h3>";
             }
             $db->close(); //end
         ?>
     </div>
-
-
     <main>
         <?php //mysqll
             $db = new mysqli('localhost','root','','egzamin5');
@@ -48,7 +44,6 @@
         ?>
     </main>
 
-
         <?php //mysql
             $db = new mysqli('localhost','root','','egzamin5');
             if (isset($_POST['wydarzenie'])) {
@@ -58,7 +53,6 @@
             $db->close(); //end
             }
         ?>
-
 
     <footer>
         <form action="kalendarz.php" method="post">

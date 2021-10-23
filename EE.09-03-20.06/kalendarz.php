@@ -14,8 +14,6 @@
     <div id="A1">
         <img src="kalendarz.png" alt="Moj kalendarz">
     </div>
-
-
     <div id="A2">
         <h1>KALENDARZ</h1>
         <?php //mysql
@@ -23,12 +21,12 @@
             $query = "SELECT miesiac, rok FROM `zadania` WHERE dataZadania = \"2020-07-01\";";
             $result = $db->query($query);
 
-            while ($row = $result->fetch_assoc()){
+            while ($row = $result->fetch_assoc()){ //rzedy 
                 $miesiac = $row['miesiac'];
                 $rok = $row['rok'];
                 echo "<h3>miesiąc: $miesiac, rok: $rok</h3>";
             }
-            $db->close();
+            $db->close(); //end
         ?>
     </div>
 
@@ -38,7 +36,7 @@
             $db = new mysqli('localhost','root','','egzamin5');
             $query = "SELECT dataZadania, wpis FROM `zadania` WHERE miesiac = 'lipiec';";
             $result = $db->query($query);
-            while ($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) { //rzedy
             $data = $row['dataZadania'];
             $wpis = $row['wpis'];
             echo '<div>';
@@ -46,7 +44,7 @@
             echo "<p>$wpis</p>";
             echo '</div>';
             }
-            $db->close();
+            $db->close(); //end
         ?>
     </main>
 
@@ -57,7 +55,7 @@
             $wydarzenie = $_POST['wydarzenie'];
             $query = "UPDATE zadania SET wpis = '$wydarzenie' WHERE dataZadania = '2020-07-13'";
             $db->query($query);
-            $db->close();
+            $db->close(); //end
             }
         ?>
 

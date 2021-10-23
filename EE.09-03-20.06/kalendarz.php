@@ -34,7 +34,7 @@
 
 
     <main>
-        <?php //mysql
+        <?php //mysqll
             $db = new mysqli('localhost','root','','egzamin5');
             $query = "SELECT dataZadania, wpis FROM `zadania` WHERE miesiac = 'lipiec';";
             $result = $db->query($query);
